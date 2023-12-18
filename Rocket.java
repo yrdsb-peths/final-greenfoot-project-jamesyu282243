@@ -13,7 +13,7 @@ public class Rocket extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int targetx = 0, targety = 0;
-    
+    private int rocket=0;
     public void addedToWorld(World MyWorld)
     {
         targetx = getX();
@@ -49,5 +49,18 @@ public class Rocket extends Actor
 
         }
         move();
+        if(rocket>0)
+        {
+            rocket--;
+        }
+        if(rocket==1)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            
+        }
+        if(rocket==0) 
+        {
+            rocket = 20;
+        }
     }
 }
