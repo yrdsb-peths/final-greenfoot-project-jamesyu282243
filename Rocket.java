@@ -25,7 +25,7 @@ public class Rocket extends Actor
         double rx = targetx-getX();
         double ry = targety-getY();
         double r = Math.sqrt(rx*rx+ry*ry);
-        int bts = 5;
+        int bts = 10;
         int posx = 0, posy = 0;
         if( r > bts)
         {
