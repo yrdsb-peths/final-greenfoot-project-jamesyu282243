@@ -14,6 +14,7 @@ public class Rocket extends Actor
      */
     private int targetx = 0, targety = 0;
     private int rocket=0;
+    private boolean toRemove = false;
     public void addedToWorld(World MyWorld)
     {
         targetx = getX();
@@ -60,7 +61,7 @@ public class Rocket extends Actor
         }
         if(rocket==0) 
         {
-            rocket = 20;
+            rocket = 30;
         }
     }
 }

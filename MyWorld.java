@@ -13,6 +13,8 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    private int rocket = 0;
 
     public MyWorld()
     {    
@@ -27,6 +29,22 @@ public class MyWorld extends World
         
 
 
+    }
+    
+    public void act()
+    {
+        if(rocket>0){
+            rocket--;
+        }
+        else
+        {
+            rocket = 20;
+            
+        }
+        if(rocket==1){
+            int py =Greenfoot.getRandomNumber(getHeight());
+            addObject (new Elephant(-(2+Greenfoot.getRandomNumber(3))), getWidth() + 200, py);
+        }
     }
 
     /**
