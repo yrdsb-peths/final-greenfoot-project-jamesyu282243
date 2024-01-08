@@ -13,6 +13,7 @@ public class Elephant extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int vx = 0;
+    private boolean toRemove = false;
     public Elephant()
     {
         
@@ -28,12 +29,23 @@ public class Elephant extends Actor
     public void move()
     {
         setLocation(getX()+ vx, getY());
+        if(getX()<-200)
+        {
+            toRemove = true;
+        }
     }
     
     public void act()
     {
         // Add your action code here.
         move();
-        
+        if(!toRemove)
+        {
+            move();
+        }
+        else
+        {
+            getWorld().removeObject(this);
+        } 
     }
 }

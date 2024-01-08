@@ -15,6 +15,7 @@ public class Rocket extends Actor
     private int targetx = 0, targety = 0;
     private int rocket=0;
     private boolean toRemove = false;
+    String facing = "right";
     public void addedToWorld(World MyWorld)
     {
         targetx = getX();
@@ -37,6 +38,8 @@ public class Rocket extends Actor
             posy = targety;
         }
         setLocation(posx,posy);
+        
+
     }
     
     public void act()
