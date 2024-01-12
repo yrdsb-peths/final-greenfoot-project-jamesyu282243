@@ -35,5 +35,16 @@ public class Laser extends Actor
         {
             getWorld().removeObject(this);
         }
+        killElephant();
+    }
+    public void killElephant()
+    {
+        if(isTouching(Elephant.class))
+        
+        {
+            removeTouching(Elephant.class);
+            removeTouching(Laser.class);
+            MyWorld world = (MyWorld) getWorld();
+        }    
     }
 }
