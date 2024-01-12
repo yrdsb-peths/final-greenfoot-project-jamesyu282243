@@ -33,14 +33,17 @@ public class Laser extends Actor
         }
         else
         {
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
         }
         killElephant();
     }
+    
+    /*
+     * When laser hits elephant, elephant is eliminated.
+     */
     public void killElephant()
     {
         if(isTouching(Elephant.class))
-        
         {
             removeTouching(Elephant.class);
             removeTouching(Laser.class);
