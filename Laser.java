@@ -34,17 +34,29 @@ public class Laser extends Actor
         }
         else
         {
-            getWorld().removeObject(this);
+            //getWorld().removeObject(this);
         }
         killElephant();
     }
     
+<<<<<<< HEAD
+=======
+    /*
+     * When laser hits elephant, elephant is eliminated.
+     */
+>>>>>>> cf6c325e789352482232dd750b5e67f79587e83c
     public void killElephant()
     {
         if(isTouching(Elephant.class))
         {
             removeTouching(Elephant.class);
+<<<<<<< HEAD
 
         }
+=======
+            removeTouching(Laser.class);
+            MyWorld world = (MyWorld) getWorld();
+        }    
+>>>>>>> cf6c325e789352482232dd750b5e67f79587e83c
     }
 }

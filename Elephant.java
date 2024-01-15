@@ -14,18 +14,57 @@ public class Elephant extends Actor
      */
     private int vx = 0;
     private boolean toRemove = false;
+    GreenfootImage[] idleLeft = new GreenfootImage[8];
+    String facing = "left";
+
+    SimpleTimer animationTimer = new SimpleTimer();
     public Elephant()
     {
+        String facing = "right";
+        SimpleTimer animationTimer = new SimpleTimer();
         
+        animationTimer.mark();
+
+        //initial elephant image
+        setImage(idleLeft[0]);
+    }    
+
+    /**
+     * Animate the elephant
+     */
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+        if(animationTimer.millisElapsed() < 100)
+        {
+            return;
+        }
+        animationTimer.mark();
+        if(facing.equals("right"))
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }    
+        else
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+
+        }
+        animateElephant();
+
     }
+
     public Elephant(int v)
     {
         vx = v;
     }
+
     public void addedToWorld(World MyWorld)
     {
         setRotation(180);
     }
+
     public void move()
     {
         setLocation(getX()+ vx, getY());
@@ -34,11 +73,12 @@ public class Elephant extends Actor
             toRemove = true;
         }
     }
-    
+
     public void act()
     {
         // Add your action code here.
         move();
+
         if(!toRemove)
         {
             move();
@@ -47,5 +87,18 @@ public class Elephant extends Actor
         {
             getWorld().removeObject(this);
         } 
+        MyWorld world = (MyWorld) getWorld();
+
+    }
+    public void killElephant()
+    {
+        if(isTouching(Laser.class))
+        
+        {
+            removeTouching(Laser.class);
+            MyWorld world = (MyWorld) getWorld();
+        }    
     }
 }
+
+
