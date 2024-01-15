@@ -21,7 +21,7 @@ public class Rocket extends Actor
         targetx = getX();
         targety = getY();
     }    
-    
+
     public void move()
     {
         double rx = targetx-getX();
@@ -38,10 +38,8 @@ public class Rocket extends Actor
             posy = targety;
         }
         setLocation(posx,posy);
-        
 
     }
-    
     public void act()
     {
         // Add your action code here.
@@ -60,11 +58,15 @@ public class Rocket extends Actor
         if(rocket==1)
         {
             getWorld().addObject(new Laser(), getX()+100, getY());
-            
+
         }
         if(rocket==0) 
         {
             rocket = 30;
+        }
+        if(toRemove) 
+        {
+            getWorld().removeObject(this);
         }
     }
 }

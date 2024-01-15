@@ -20,6 +20,7 @@ public class Laser extends Actor
         image.drawLine(0, 5, image.getWidth()-1, 5);
         setImage(image);
     }
+
     public void act()
     {
         // Add your action code here.
@@ -34,6 +35,16 @@ public class Laser extends Actor
         else
         {
             getWorld().removeObject(this);
+        }
+        killElephant();
+    }
+    
+    public void killElephant()
+    {
+        if(isTouching(Elephant.class))
+        {
+            removeTouching(Elephant.class);
+
         }
     }
 }
