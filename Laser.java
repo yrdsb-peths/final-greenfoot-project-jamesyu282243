@@ -13,6 +13,8 @@ public class Laser extends Actor
      */
     private boolean toRemove = false;
     private int vx = 3;
+    
+    GreenfootSound laserSpound = new GreenfootSound("blaster-2-81267.mp3");
     public void addedToWorld(World MyWorld)
     {
         GreenfootImage image = new GreenfootImage(50, 10);

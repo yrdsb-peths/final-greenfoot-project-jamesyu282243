@@ -16,6 +16,9 @@ public class Rocket extends Actor
     private int rocket=0;
     private boolean toRemove = false;
     String facing = "right";
+    
+    GreenfootSound laserSound = new GreenfootSound("blaster-2-81267.mp3");
+
     public void addedToWorld(World MyWorld)
     {
         targetx = getX();
@@ -58,7 +61,7 @@ public class Rocket extends Actor
         if(rocket==1)
         {
             getWorld().addObject(new Laser(), getX()+100, getY());
-
+            laserSound.play();
         }
         if(rocket==0) 
         {
