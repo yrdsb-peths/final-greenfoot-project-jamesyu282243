@@ -51,15 +51,6 @@ public class Elephant extends Actor
         MyWorld world = (MyWorld) getWorld();
 
     }
-    public void killElephant()
-    {
-        if(isTouching(Laser.class))
-        
-        {
-            removeTouching(Laser.class);
-            MyWorld world = (MyWorld) getWorld();
-        }    
-    }
 }
 
 
