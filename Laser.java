@@ -52,7 +52,8 @@ public class Laser extends Actor
             removeTouching(Elephant.class);
             
         }
-        //increaseScore();
+        MyWorld world = (MyWorld) getWorld();
+        world.increaseScore();
     }    
 }
 

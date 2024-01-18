@@ -35,7 +35,7 @@ public class MyWorld extends World
         // Score throughout game.
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);       
-
+        
     }
     
     
@@ -52,6 +52,7 @@ public class MyWorld extends World
             level += 1;
         }
     } 
+    
     public void act()
     {
         if(rocket>0){
@@ -68,6 +69,7 @@ public class MyWorld extends World
         }
         
     }
+    
     public boolean isGameOver()
     {
         return gameIsOver;
