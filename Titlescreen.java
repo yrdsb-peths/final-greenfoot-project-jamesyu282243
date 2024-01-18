@@ -11,7 +11,7 @@ public class Titlescreen extends World
     Label titleLabel = new Label("Elephant Invasion", 60);
     Label startLabel = new Label("Press 'SPACE' to Start", 30);
     Label instructionLabel = new Label("Objective: Eliminate All Elephants!", 30);
-    
+    Label instructLabel = new Label("Without Bumping into the them!", 30);
     /**
      * Constructor for objects of class Titlescreen.
      * 
@@ -24,6 +24,7 @@ public class Titlescreen extends World
         addObject(titleLabel, getWidth()/2, getHeight()/2);
         addObject(startLabel, getWidth()/2, getHeight()/2 + 120);
         addObject(instructionLabel, getWidth()/2, getHeight() - 50);
+        addObject(instructLabel, getWidth()/2, getHeight() - 20);
         prepare();
     }
 
