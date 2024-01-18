@@ -44,6 +44,7 @@ public class Rocket extends Actor
         setLocation(posx,posy);
 
     }
+    
     public void act()
     {
         // Add your action code here.
@@ -77,7 +78,7 @@ public class Rocket extends Actor
         if(isTouching(Elephant.class))
         {
             MyWorld world = (MyWorld) getWorld();
-            
+            world.gameOver();
         }
         
     }
