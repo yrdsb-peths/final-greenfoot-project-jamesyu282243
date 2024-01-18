@@ -11,7 +11,7 @@ public class Titlescreen extends World
     Label titleLabel = new Label("Elephant Invasion", 60);
     Label startLabel = new Label("Press 'SPACE' to Start", 30);
     Label instructionLabel = new Label("Objective: Eliminate All Elephants!", 30);
-
+    
     /**
      * Constructor for objects of class Titlescreen.
      * 
@@ -37,7 +37,11 @@ public class Titlescreen extends World
         {
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+            
         } 
+        // add rocketgif
+        //Rocket rocketPic = new Rocket();
+        //addObject(rocketPic, 100, 70);
     }
     
     /**
@@ -46,5 +50,10 @@ public class Titlescreen extends World
      */
     private void prepare()
     {
+        //Rocketpic rocketpic = new Rocketpic();
+        //addObject(rocketpic,92,92);
+        Rocketpic rocket = new Rocketpic();
+        addObject(rocket, getWidth()/2 - 200, getHeight()/2 -100);
+        //removeObject(rocketpic);
     }
 }

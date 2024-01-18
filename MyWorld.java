@@ -13,11 +13,12 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    
     private int rocket = 0;
     public int score = 0;
+    
     Label scoreLabel;
     int level = 1;
+    Boolean gameIsOver = false;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,22 +33,14 @@ public class MyWorld extends World
         addObject(new Rocket(),100,200);
         
         // Score throughout game.
-        
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);       
 
     }
     
-    /**
-     * End game and draw 'GaveOver'
-     */
-    public void gameOver()
-    {
-        Label gameOverLabel = new Label("Gamer Over", 100);
-        addObject(gameOverLabel, 300, 200);
-    }
+    
     /** 
-     * increase score
+     * increases score after elephant dies
      */
     public void increaseScore()
     {
@@ -69,10 +62,28 @@ public class MyWorld extends World
             rocket = 20;
             
         }
-        if(rocket==1){
+        if(rocket>=2){
             int py =Greenfoot.getRandomNumber(getHeight());
             addObject (new Elephant(-(2+Greenfoot.getRandomNumber(3))), getWidth() + 200, py);
         }
+        
+    }
+    public boolean isGameOver()
+    {
+        return gameIsOver;
+    }
+    
+    /**
+     * End game and draw 'GaveOver'
+     */
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 100);
+        
+        //Label restartLabel = new Label("press space to restart", 30);
+        //addObject(restartLabel, 300, 150);
+        gameIsOver = true;
         
     }
 

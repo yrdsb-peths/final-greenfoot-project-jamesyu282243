@@ -15,16 +15,17 @@ public class Rocket extends Actor
     private int targetx = 0, targety = 0;
     private int rocket=0;
     private boolean toRemove = false;
-    String facing = "right";
     
     GreenfootSound laserSound = new GreenfootSound("blaster-2-81267.mp3");
-
     public void addedToWorld(World MyWorld)
     {
         targetx = getX();
         targety = getY();
     }    
-
+    
+    /**
+     * Allows rocket to move with mouse.
+     */
     public void move()
     {
         double rx = targetx-getX();
@@ -58,10 +59,11 @@ public class Rocket extends Actor
         {
             rocket--;
         }
-        if(rocket==1)
+        if(rocket==4)
         {
             getWorld().addObject(new Laser(), getX()+100, getY());
             laserSound.play();
+            
         }
         if(rocket==0) 
         {
@@ -71,5 +73,16 @@ public class Rocket extends Actor
         {
             getWorld().removeObject(this);
         }
+
+        if(isTouching(Elephant.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            
+        }
+        
     }
+    
+    
+    
+    
 }

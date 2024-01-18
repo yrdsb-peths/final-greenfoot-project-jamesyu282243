@@ -12,7 +12,7 @@ public class Laser extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private boolean toRemove = false;
-    private int vx = 7;
+    private int vx = 10;
     
     GreenfootSound laserSpound = new GreenfootSound("blaster-2-81267.mp3");
     public void addedToWorld(World MyWorld)
@@ -45,15 +45,14 @@ public class Laser extends Actor
      * When laser hits elephant, elephant is eliminated.
      */
     
-    
     public void killElephant()
     {
         if(isTouching(Elephant.class))
         {
             removeTouching(Elephant.class);
             
-
         }
+        //increaseScore();
     }    
 }
 
