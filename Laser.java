@@ -47,13 +47,27 @@ public class Laser extends Actor
     
     public void killElephant()
     {
+        
         if(isTouching(Elephant.class))
         {
-            removeTouching(Elephant.class);
             
+            removeTouching(Elephant.class);
+            checkCollision();
         }
+        
+    }  
+    
+     public void checkCollision()
+    {
+        // Check for collisions with Elephant
+        Elephant elephant = (Elephant) getOneIntersectingObject(Elephant.class);
+        
+
+        // Increase the score
         MyWorld world = (MyWorld) getWorld();
+        world.removeObject(this);
         world.increaseScore();
-    }    
+        
+    }
 }
 
