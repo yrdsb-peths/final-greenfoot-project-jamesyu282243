@@ -13,7 +13,7 @@ public class Rocket extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int targetx = 0, targety = 0;
-    private int rocket=0;
+    private int rocket = 0;
     private boolean toRemove = false;
     
     GreenfootSound laserSound = new GreenfootSound("blaster-2-81267.mp3");
@@ -31,7 +31,7 @@ public class Rocket extends Actor
         double rx = targetx-getX();
         double ry = targety-getY();
         double r = Math.sqrt(rx*rx+ry*ry);
-        int bts = 10;
+        int bts = 100;
         int posx = 0, posy = 0;
         if( r > bts)
         {
@@ -56,16 +56,67 @@ public class Rocket extends Actor
 
         }
         move();
+        
         if(rocket>0)
         {
             rocket--;
         }
-        if(rocket==4)
+        if(rocket==0)
         {
             getWorld().addObject(new Laser(), getX()+100, getY());
             laserSound.play();
             
         }
+        if(rocket==10)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==20)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==60)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==40)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==60)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==50)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==40)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        if(rocket==30)
+        {
+            getWorld().addObject(new Laser(), getX()+100, getY());
+            laserSound.play();
+            
+        }
+        
+        
         if(rocket==0) 
         {
             rocket = 30;

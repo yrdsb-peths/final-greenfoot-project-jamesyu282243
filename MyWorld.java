@@ -15,7 +15,7 @@ public class MyWorld extends World
      */
     private int rocket = 0;
     public int score = 0;
-
+    
     Label scoreLabel;
     int level = 1;
     Boolean gameIsOver = false;
@@ -54,22 +54,29 @@ public class MyWorld extends World
 
     public void act()
     {
-        if(rocket>0){
+        if(rocket==0){
             rocket--;
+            
         }
         else
         {
             rocket = 0;
-
+            createElephant();
         }
 
-        int py = Greenfoot.getRandomNumber(getHeight());
-        addObject (new Elephant(-(2+Greenfoot.getRandomNumber(3))), getWidth() + 200, py);
-
-        //if(scoreLabel==10)
-
     }
+    
 
+    /**
+     * Create a new banana at random location at top of the screen 
+     */
+    
+    public void createElephant()
+    {
+        int py = Greenfoot.getRandomNumber(getHeight());
+        addObject (new Elephant(-(1+Greenfoot.getRandomNumber(2))), getWidth() + 220, py);
+        
+    }
     public boolean isGameOver()
     {
         return gameIsOver;
@@ -84,13 +91,11 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("Game Over", 90);
 
         addObject(gameOverLabel, 300, 170);
-
+        gameIsOver = true;
         //Label restartLabel = new Label("press space to restart", 30);
         //addObject(restartLabel, 300, 150);
-        gameIsOver = true;
-
     }
-
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
